@@ -43,7 +43,7 @@ class Tree {
     }
   }
 
-   public:
+    public:
       explicit Tree(std::vector<char> vecto) {
         root = new Node();
         root->value = '*';
@@ -57,5 +57,5 @@ class Tree {
         }
         return perm[i];
       }
-  };
+};
 #endif  // INCLUDE_TREE_H_
