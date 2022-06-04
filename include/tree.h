@@ -1,6 +1,7 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
+#include <algorithm>
 #include <vector>
 #include <string>
 
@@ -12,9 +13,9 @@ class Tree {
     };
   Node* root;
   std::vector<std::string> perm;
-  
+
   void Perm(Node* root, std::string str = "") {
-    if(!root->vetk.size()) {
+    if (!root->vetk.size()) {
       str += root->value;
       perm.push_back(str);
     }
@@ -25,7 +26,7 @@ class Tree {
       Perm(root->vetk[i], str);
     }
   }
-  
+
   void makeTree(Node* root, std::vector<char> vecto) {
     if (!vecto.size()) {
       return;
@@ -41,7 +42,7 @@ class Tree {
       makeTree(root->vetk[i], vecto);
     }
   }
-  
+
    public:
       explicit Tree(std::vector<char> vecto) {
         root = new Node();
@@ -49,12 +50,12 @@ class Tree {
         makeTree(root, vecto);
         Perm(root);
       }
-  
+
       std::string get(int i) const {
         if (i >= perm.size()) {
           return "";
         }
         return perm[i];
       }
-  };  
+  };
 #endif  // INCLUDE_TREE_H_
