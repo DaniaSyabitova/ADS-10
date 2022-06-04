@@ -19,7 +19,7 @@ class Tree {
       perm.push_back(str);
     }
     if (root->value != '*') {
-      s += root->value;
+      str += root->value;
     }
     for (int i = 0; i < root->vetk.size(); i++) {
       Perm(root->vetk[i], str);
@@ -34,7 +34,7 @@ class Tree {
       vecto.erase(std::find(vecto.begin(), vecto.end(), root->value));
     }
     for (int i = 0; i < vecto.size(); i++) {
-      root->vetc.push_back(new Node());
+      root->vetk.push_back(new Node());
     }
     for (int i = 0; i < root->vetk.size(); i++) {
       root->vetk[i]->value = vecto[i];
