@@ -3,8 +3,8 @@
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
+#include  <vector>
 #include  "tree.h"
-#include <vector>
 
 std::vector<char> getPerm(const Tree& tree, int n) {
   // напишите реализацию
