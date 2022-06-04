@@ -43,19 +43,19 @@ class Tree {
     }
   }
 
-    public:
-      explicit Tree(std::vector<char> vecto) {
-        root = new Node();
-        root->value = '*';
-        makeTree(root, vecto);
-        Perm(root);
-      }
+ public:
+    explicit Tree(std::vector<char> vecto) {
+      root = new Node();
+      root->value = '*';
+      makeTree(root, vecto);
+      Perm(root);
+    }
 
-      std::string get(int i) const {
-        if (i >= perm.size()) {
-          return "";
-        }
-        return perm[i];
+    std::string get(int i) const {
+      if (i >= perm.size()) {
+        return "";
       }
+      return perm[i];
+    }
 };
 #endif  // INCLUDE_TREE_H_
